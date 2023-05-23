@@ -1,0 +1,923 @@
+:root {
+    --gray-200: #b8b9c3;
+    --gray-500: #444654;
+    --gray-900: #202123;
+    --dark-300: #353740;
+    --white: #FFFFFF;
+    --dark: #050509;
+    --dim-gray: #ffffff0d;
+    --icon: #19c37d;
+    --bg-out-modal: #34354199;
+
+    --danger: #b91c1c;
+    --danger-hover: #b91c1ccc;
+    --warning: #b3ae28;
+    --warning-hover: #b3ae29cc;
+    --secondary: #343541;
+    --secondary-hover: #343541cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+    color: var(--white);
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-200);
+    border-radius: 10px;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--gray-500);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.container .leftNavbar {
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
+    background-color: var(--gray-900);
+    padding: 1rem;
+}
+
+.container .leftNavbar .navbarClose{
+    position: absolute;
+    top: 25px;
+    right: -40px;
+    background-color: var(--icon);
+    width: 40px;
+    height: 40px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+.container .leftNavbar .section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .leftNavbar .section .newChatBtn div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--white);
+    border: 2px solid var(--gray-500);
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container .leftNavbar .section .newChatBtn div .icon,
+.container .leftNavbar .section .newChatBtn div .text {
+    font-size: 16px;
+    margin: 0 8px;
+}
+
+.container .leftNavbar .section .history_account {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container .leftNavbar .section .history_account .chatHistory {
+    height: 100%;
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container {
+    margin: 5px 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 5px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    height: 20px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box:hover {
+    background-color: var(--gray-500);
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box .icon {
+    color: var(--white);
+    font-size: 16px;
+    padding: 0 10px;
+    display: flex;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box .content_controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box .content_controls .content {
+    width: 100%;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box .content_controls .content p {
+    width: max-content;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box .content_controls .controls {
+    width: 15%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    background: var(--gray-900);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box:hover .content_controls .controls {
+    display: flex;
+    background-color: var(--gray-500);
+}
+
+.container .leftNavbar .section .history_account .chatHistory .history_container .box .content_controls .controls button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.container .leftNavbar .section .history_account .accountSection {
+    border-top: 1px solid var(--gray-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    height: 80px;
+}
+
+.container .leftNavbar .section .history_account .accountSection .accountBox {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.container .leftNavbar .section .history_account .accountSection .accountBox:hover {
+    background-color: var(--gray-500);
+}
+
+.container .leftNavbar .section .history_account .accountSection .userInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.container .leftNavbar .section .history_account .accountSection .accountBox .userInfo .image {
+    width: 40px;
+    height: 40px;
+}
+
+.container .leftNavbar .section .history_account .accountSection .accountBox .userInfo .image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.container .leftNavbar .section .history_account .accountSection .accountBox .userInfo .text {
+    color: var(--white);
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+
+.container .leftNavbar .section .history_account .accountSection .dotIcon .icon {
+    color: var(--white);
+}
+
+.container .leftNavbar .section .history_account .accountSection .menusBox {
+    display: none;
+}
+
+.container .leftNavbar .section .history_account .accountSection .menusBox.show {
+    display: block;
+    position: absolute;
+    left: 0%;
+    bottom: 100px;
+    background-color: var(--dark);
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.container .leftNavbar .section .history_account .accountSection .menusBox.show nav .menu {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.container .leftNavbar .section .history_account .accountSection .menusBox.show nav .menu:hover {
+    background-color: var(--gray-500);
+}
+
+.container .leftNavbar .section .history_account .accountSection .menusBox.show nav .menu .icon,
+.container .leftNavbar .section .history_account .accountSection .menusBox.show nav .menu .text {
+    color: var(--white);
+    font-size: 15px;
+    margin: 0 10px;
+    display: flex;
+}
+
+
+.container .rightSideBar {
+    width: 100%;
+    height: 100%;
+}
+
+.container .rightSideBar .panels {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.container .rightSideBar .panels .codePanel {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .rightSideBar .panels .codePanel .introPage {
+    height: 100%;
+    width: 50%;
+    display: none;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    padding: 0 20px;
+}
+
+.container .rightSideBar .panels .codePanel .introPage.show {
+    display: block;
+}
+
+.container .rightSideBar .panels .codePanel .introPage .title h2 {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.container .rightSideBar .panels .codePanel .introPage .productionInfo .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.container .rightSideBar .panels .codePanel .introPage .productionInfo .row .col .box {
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container .rightSideBar .panels .codePanel .introPage .productionInfo .row .col .box .icon {
+    margin-bottom: 10px;
+}
+
+.container .rightSideBar .panels .codePanel .introPage .productionInfo .row .col .box .icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.container .rightSideBar .panels .codePanel .introPage .productionInfo .row .col .content .contentBox {
+    text-align: center;
+    padding: 15px 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--white);
+    background-color: var(--dim-gray);
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat.show {
+    display: block;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode {
+    width: 100%;
+}
+
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel {
+    background-color: var(--dark-300);
+}
+
+
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    gap: 1rem;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .userLogo .image {
+    width: 40px;
+    height: 40px;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .userLogo .image img,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .gptLogo .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls .question,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls .control,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls .answer,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls .control {
+    color: var(--white);
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls .control,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls .control {
+    opacity: 0;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel:hover .box .question_controls .control,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel:hover .box .answer_controls .control {
+    opacity: 1;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls .question p,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls .answer p {
+    width: 100%;
+    text-align: justify;
+    font-size: 14px;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls .control,
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls .control {
+    margin-left: 3rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .gptLogo .image {
+    background-color: var(--icon);
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.container .rightSideBar .userPanel {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .rightSideBar .userPanel .panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: var(--gray-500);
+}
+
+
+.container .rightSideBar .userPanel .panel .userForm {
+    width: 100%;
+}
+
+
+.container .rightSideBar .userPanel .panel .userForm .inputBox {
+    width: 100%;
+    position: relative;
+}
+
+.container .rightSideBar .userPanel .panel .userForm .inputBox input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--dim-gray);
+    border: none;
+    box-shadow: 0 0 5px var(--dark);
+    border-radius: 8px;
+    outline: none;
+    color: var(--white);
+    font-size: 15px;
+}
+
+.container .rightSideBar .userPanel .panel .userForm button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+
+/* ========================= Logout Modal ========================= */
+.mainModal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-out-modal);
+    z-index: 999;
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mainModal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.mainModal .modal {
+    background-color: var(--gray-900);
+    border-radius: 10px;
+    /* padding: 20px; */
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease;
+}
+
+.mainModal.active .modal {
+    top: 50%;
+}
+
+.mainModal .modal .modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainModal .modal .modal-content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--dark-300);
+}
+
+.mainModal .modal .modal-content .header .title h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.mainModal .modal .modal-content .header .icon svg {
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mainModal .modal .modal-content .body {
+    padding: 20px;
+    height: 100%;
+}
+
+.mainModal .modal .modal-content .body span {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.mainModal .modal .modal-content .footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid var(--dark-300);
+}
+
+.mainModal .modal .modal-content .btn {
+    padding: 7px 15px;
+    margin: 0 10px;
+    background: none;
+    border: none;
+    color: var(--white);
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.mainModal .modal .modal-content .btn-danger {
+    background-color: var(--danger);
+}
+
+.mainModal .modal .modal-content .btn-warning {
+    background-color: var(--warning);
+}
+
+.mainModal .modal .modal-content .btn-secondary {
+    background-color: var(--secondary);
+}
+
+.mainModal .modal .modal-content .btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+.mainModal .modal .modal-content .btn-warning:hover {
+    background-color: var(--warning-hover);
+}
+
+.mainModal .modal .modal-content .btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+
+
+
+.logout_modal .modal {
+    width: 30rem;
+}
+
+.settings_modal .modal {
+    width: 50rem;
+    height: 30rem;
+}
+
+
+.mainModal .modal .modal-content .body .settingsBody {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .navbar {
+    border-right: 1px solid var(--dark-300);
+    width: 25%;
+    min-width: 25%;
+    display: flex;
+    padding: 10px;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .navbar nav {
+    width: 100%;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .navbar nav .settingMenu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 5px 0;
+    border: none;
+    background: none;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .navbar nav .settingMenu.active,
+.mainModal .modal .modal-content .body .settingsBody .navbar nav .settingMenu:hover {
+    background-color: var(--gray-500);
+}
+
+.mainModal .modal .modal-content .body .settingsBody .navbar nav .settingMenu .icon svg {
+    color: var(--white);
+    font-size: 18px;
+    display: flex;
+    padding: 0 10px;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .navbar .settingMenu .text {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent {
+    width: 100%;
+    padding: 20px;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel,
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls {
+    display: none;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel.active,
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls.active {
+    display: block;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel .box,
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-bottom: 1px solid var(--dark-300);
+}
+
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel .box .content h5,
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .content h5 {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .content p {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 8px;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .content p a {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel .box .options {
+    border: 1px solid var(--dark-300);
+    border-radius: 8px;
+    width: 25%;
+    position: relative;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel .box .options select {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--white);
+    padding: 10px;
+    appearance: none;
+    width: 100%;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel .box .options select option {
+    background: var(--dark-300);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .generalPanel .box .options svg{
+    position: absolute;
+    fill: var(--white);
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin: 0 20px;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch input:checked+.slider {
+    background-color: #10a37f;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch input:focus+.slider {
+    box-shadow: 0 0 1px #10a37f;
+}
+
+.mainModal .modal .modal-content .body .settingsBody .menubarContent .dataControls .box .switch input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+.mobileNavBtn{
+    display: none;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .container .leftNavbar{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 99;
+        transition: all 1.2s ease;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    .container .leftNavbar.active{
+        left: 0;
+        opacity: 1;
+    }
+
+    .mobileNavBtn{
+        position: fixed;
+        top: 50%;
+        left: 0;
+        background-color: var(--icon);
+        width: 50px;
+        height: 50px;
+        transform: translate(0, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        cursor: pointer;
+        transition: all .8s ease;
+        opacity: 1;
+    }
+
+    .mobileNavBtn.hide{
+        left: -25%;
+        opacity: 0;
+    }
+
+    .mobileNavBtn .btn{
+        display: flex;
+    }
+
+    .mobileNavBtn .btn svg{
+        fill: var(--white);
+    }
+
+    .container .leftNavbar .navbarClose{
+        display: flex;
+    }
+
+    .container .rightSideBar .panels .codePanel .introPage,
+    .container .rightSideBar .userPanel .panel{
+        width: 75%;
+    }
+
+    .container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box .question_controls .control,
+    .container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box .answer_controls .control{
+        margin-left: 15px;
+    }
+
+    .container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .questionPanel .box,
+    .container .rightSideBar .panels .codePanel .userMessageChat .messages .boxCode .answerPanel .box{
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container .rightSideBar .panels .codePanel{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .container .rightSideBar .panels .codePanel .introPage .productionInfo .row{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    
+}
+
