@@ -28,19 +28,20 @@ Here are some key aspects and considerations for the ChatGPT Clone UI:
 
 1. First page in introduction chatGPT
 
-![introduction image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Home.png?raw=true)
+![introduction image](images/Output/Home.png)
 
 
 2. Second image is user all chats 
-![introduction image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/UserChat.png?raw=true)
+
+![User chat image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/UserChat.png?raw=true)
 
 
 3. Third image is User Settings Modal  
-![introduction image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Settings.png?raw=true)
+![Settings Modal image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Settings.png?raw=true)
 
 
 4. Forth image is Logout Modal  
-![introduction image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Logout.png?raw=true)
+![Logout Modal image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Logout.png?raw=true)
 
 
 # Thank You 😀😀😀
