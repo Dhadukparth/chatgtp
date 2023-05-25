@@ -33,15 +33,15 @@ Here are some key aspects and considerations for the ChatGPT Clone UI:
 
 2. Second image is user all chats 
 
-![User chat image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/UserChat.png?raw=true)
+![User chat image](images/Output/UserChat,png)
 
 
 3. Third image is User Settings Modal  
-![Settings Modal image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Settings.png?raw=true)
+![Settings Modal image](images/Output/Settings.png)
 
 
 4. Forth image is Logout Modal  
-![Logout Modal image](https://github.com/Dhadukparth/chatgtp/tree/master/images/Output/Logout.png?raw=true)
+![Logout Modal image](images/Output/Logout.png)
 
 
 # Thank You 😀😀😀
