@@ -127,6 +127,7 @@ let newChatBtn = document.getElementsByClassName("newChatBtn")[0];
 newChatBtn.addEventListener("click", () => {
     let checkShowClass = document.getElementsByClassName("introPage")[0].classList.contains("show");
     if (!checkShowClass) {
+        document.getElementsByClassName("userMessageChat")[0].classList.remove("show");
         document.getElementsByClassName("introPage")[0].classList.add("show");
     }
 
@@ -219,6 +220,24 @@ navbarCloseBtn.addEventListener("click", () => {
     if(leftSidebar.classList.contains("active")){
         leftSidebar.classList.remove("active");
     }
+})
+
+
+// ========================= History Click Event =========================
+let historyBox = document.querySelectorAll(".history_container .box");
+historyBox.forEach((boxEvent)=>{
+    boxEvent.addEventListener("click", ()=>{
+        let historys = Array.from(document.querySelectorAll(".history_container .box"));
+        historys.forEach((history) => {
+                history.classList.remove('active');
+        })
+
+        if(!boxEvent.classList.contains("active")){
+            boxEvent.classList.toggle("active");
+            document.getElementsByClassName("introPage")[0].classList.remove("show");
+            document.getElementsByClassName("userMessageChat")[0].classList.add("show");
+        }
+    })
 })
 
 

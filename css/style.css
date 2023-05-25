@@ -136,7 +136,8 @@ body {
     position: relative;
 }
 
-.container .leftNavbar .section .history_account .chatHistory .history_container .box:hover {
+.container .leftNavbar .section .history_account .chatHistory .history_container .box:hover,
+.container .leftNavbar .section .history_account .chatHistory .history_container .box.active {
     background-color: var(--gray-500);
 }
 
@@ -306,10 +307,7 @@ body {
     height: 100%;
     width: 50%;
     display: none;
-    /* justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-    padding: 0 20px;
+    padding: 40px 20px;
 }
 
 .container .rightSideBar .panels .codePanel .introPage.show {
