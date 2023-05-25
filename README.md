@@ -33,7 +33,7 @@ Here are some key aspects and considerations for the ChatGPT Clone UI:
 
 2. Second image is user all chats 
 
-![User chat image](images/Output/UserChat,png)
+![User chat image](images/Output/UserChat.png)
 
 
 3. Third image is User Settings Modal  
